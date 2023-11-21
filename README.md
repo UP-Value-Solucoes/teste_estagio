@@ -1,6 +1,6 @@
 # Desafio de Estágio para Desenvolvedor: Sistema de Login Moderno e Interativo
 
-Seja bem-vindo ao desafio de estágio para desenvolvedor fullstack! Neste teste, você terá a oportunidade de demonstrar suas habilidades na construção de um sistema de login moderno e interativo. Utilizaremos tecnologias populares no desenvolvimento web, incluindo React, HTML, CSS para o frontend, e JavaScript, Express e PostgreSQL para o backend.
+Seja bem-vindo ao desafio de estágio para desenvolvedor fullstack! Neste teste, você terá a oportunidade de demonstrar suas habilidades na construção de um sistema de login moderno e interativo. Utilizaremos tecnologias populares no desenvolvimento web, incluindo JavaScript, React, HTML, CSS para o frontend, e JavaScript, Express e PostgreSQL para o backend.
 
 ## Instruções Gerais:
 
