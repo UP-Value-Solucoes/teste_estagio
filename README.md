@@ -4,7 +4,7 @@
 
 # Desafio de Estágio para Desenvolvedor: Sistema de Login Moderno e Interativo
 
-Seja bem-vindo ao desafio de estágio para desenvolvedor fullstack! Neste teste, você terá a oportunidade de demonstrar suas habilidades na construção de um sistema de login moderno e interativo. Utilizaremos tecnologias populares no desenvolvimento web, incluindo JavaScript, React, HTML, CSS para o frontend, e JavaScript, Express e PostgreSQL para o backend.
+Seja bem-vindo ao desafio de estágio para desenvolvedor frontend! Neste teste, você terá a oportunidade de demonstrar suas habilidades na construção de um sistema de login moderno e interativo. Utilizaremos tecnologias populares no desenvolvimento web, incluindo JavaScript, React, HTML, CSS para o frontend, e JavaScript, Express e PostgreSQL para o backend (opcional).
 
 ## Instruções Gerais:
 
@@ -34,6 +34,10 @@ Seja bem-vindo ao desafio de estágio para desenvolvedor fullstack! Neste teste,
 * Adicione feedback visual para indicar sucesso ou falha no login.
 * Utilize transições ou animações para tornar a experiência mais fluida.
 
+## 1ª Opção:
+
+Caso você possua conhecimentos em desenvolvimento backend e deseje aprimorar ainda mais suas habilidades, oferecemos a opção de explorar a integração do sistema de login com um servidor Express e PostgreSQL. Esta etapa adiciona um desafio extra, permitindo que você aprofunde seus conhecimentos em tecnologias fundamentais.
+
 ### Backend (JavaScript, Express, PostgreSQL):
 
 * Crie um servidor Express para lidar com solicitações de login.
@@ -47,6 +51,19 @@ Seja bem-vindo ao desafio de estágio para desenvolvedor fullstack! Neste teste,
 * Use requisições HTTP para enviar dados de login do frontend para o backend.
 * Retorne feedback adequado para o frontend com base na resposta do servidor.
 
+## 2ª Opção:
+
+Caso opte por focar exclusivamente no desenvolvimento frontend e escolha trabalhar com dados em JSON, você pode criar um novo tópico em seu projeto dedicado a essa abordagem.
+
+### Trabalhando com Dados em JSON:
+
+* Crie um arquivo JSON contendo informações fictícias de usuários
+* Modifique a lógica do seu frontend para interagir com os dados em JSON.
+
+Lembramos que esta parte é totalmente opcional. Caso não tenha experiência ou prefira focar apenas no desenvolvimento frontend, você pode prosseguir trabalhando com dados em JSON. Nesse caso, crie um novo tópico no seu projeto, mantendo os mesmos objetivos de manipulação, proporcionando uma abordagem igualmente desafiadora.
+
+Fique à vontade para escolher a abordagem que melhor se alinha com suas habilidades e metas de aprendizado!
+
 ## Entrega:
 
 * Crie uma branch com o seu nome a partir desse repositório e faça um pull request para a branch main.
@@ -57,5 +74,6 @@ Seja bem-vindo ao desafio de estágio para desenvolvedor fullstack! Neste teste,
 * Siga boas práticas de codificação e design.
 * Documente seu código quando necessário.
 * Testes automatizados são bem-vindos, mas não obrigatórios.
+
 
 Boa sorte! Estamos ansiosos para ver sua criatividade e habilidades em ação. Se tiver alguma dúvida, não hesite em entrar em contato.
