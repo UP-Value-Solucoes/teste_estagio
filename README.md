@@ -66,7 +66,8 @@ Fique à vontade para escolher a abordagem que melhor se alinha com suas habilid
 
 ## Entrega:
 
-* Crie uma branch com o seu nome a partir desse repositório e faça um pull request para a branch main.
+* Crie uma branch com o seu nome a partir desse repositório.
+* Faça um pull request para a branch main.
 * Inclua qualquer informação adicional que considere relevante para a avaliação.
 
 ## Dicas:
