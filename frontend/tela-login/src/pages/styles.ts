@@ -47,6 +47,7 @@ export const ContainerForm = styled.div`
 export const ContainerInput = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 12px;
 
   label {
     color: ${(props) => props.theme["green-800"]};
@@ -73,6 +74,7 @@ export const SubmitButton = styled.button`
   margin-bottom: 10px;
   text-shadow: 0 1px 1px #333;
   cursor: pointer;
+  margin-top: 12px;
 `;
 
 export const FooterContainer = styled.footer`
