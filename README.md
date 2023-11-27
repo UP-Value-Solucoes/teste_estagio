@@ -70,6 +70,8 @@ Fique à vontade para escolher a abordagem que melhor se alinha com suas habilid
 * Faça um pull request para a branch main.
 * Inclua qualquer informação adicional que considere relevante para a avaliação.
 
+O prazo para a entrega do seu pull request é até o dia 01/12/2023, às 23h59 (UTC-3). Certifique-se de concluir o processo dentro desse período para garantir a avaliação do seu trabalho.
+
 ## Dicas:
 
 * Siga boas práticas de codificação e design.
