@@ -28,6 +28,7 @@ const loginValidationSchema = z.object({
 export function Home() {
   const [modalOpen, setModalOpen] = useState(false);
   const [messageInvalid, setMessageInvalid] = useState(false);
+  const [loginSuccess, setLoginSuccess] = useState(false);
 
   const {
     register,
@@ -48,7 +49,10 @@ export function Home() {
           if (response.data.length === 0) {
             setMessageInvalid(true);
           } else {
-            navigate("/Sucess");
+            setLoginSuccess(true);
+            setTimeout(() => {
+              navigate("/Sucess");
+            }, 2000);
           }
         });
     } catch (error) {
@@ -71,6 +75,7 @@ export function Home() {
         {messageInvalid && (
           <p className="acessError">Suas Credenciais estão erradas!!!</p>
         )}
+        {loginSuccess && <p className="loginSuccess">Login bem-sucedido!</p>}
         <form onSubmit={handleSubmit(handleLogin)}>
           <Input
             type="email"

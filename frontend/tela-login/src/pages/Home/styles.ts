@@ -52,6 +52,13 @@ export const ContainerForm = styled.div`
     color: ${(props) => props.theme["red"]};
   }
 
+  .loginSuccess {
+    text-align: center;
+    font-size: 16px;
+    color: ${(props) => props.theme["green"]};
+    font-weight: bold;
+  }
+
   .acessError {
     text-align: center;
     color: ${(props) => props.theme["red"]};
@@ -63,6 +70,9 @@ export const ContainerForm = styled.div`
     margin-left: 12px;
     color: ${(props) => props.theme["green-800"]};
     cursor: pointer;
+  }
+  .buttonRegister:hover {
+    text-decoration: underline;
   }
 `;
 
