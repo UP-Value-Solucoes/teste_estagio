@@ -31,15 +31,18 @@ export const ModalOverlay = styled.div`
   }
 
   .modal {
-    background: #fff;
+    background: ${(props) => props.theme["white"]};
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: flex-start;
-    /* align-items: center; */
     flex-direction: column;
     width: 375px;
+
+    @media (max-width: 397px) {
+      margin: 0px 12px;
+    }
 
     .sucessText {
       text-align: center;
