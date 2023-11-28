@@ -1,16 +1,22 @@
+import { useState } from "react";
+
 import { useForm } from "react-hook-form";
-import { ContainerInput } from "../../pages/Home/styles";
-import { ModalOverlay } from "./styles";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+
 import { api } from "../../services";
+
+import { Input } from "../Input";
+
+import sucess from "../../assets/sucess.gif";
+import { ModalOverlay } from "./styles";
 
 interface ModalProps {
   isOpen: boolean;
   closeModal: () => void;
 }
 
-interface RegisterUser {
+export interface RegisterUser {
   email: string;
   password: string;
   confirmPassword: string;
@@ -30,9 +36,12 @@ const validationRegisterSchema = z
   });
 
 export function Modal({ isOpen, closeModal }: ModalProps) {
+  const [isRegistrationSuccessful, setRegistrationSuccessful] = useState(false);
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<RegisterUser>({
     resolver: zodResolver(validationRegisterSchema),
@@ -44,8 +53,15 @@ export function Modal({ isOpen, closeModal }: ModalProps) {
         email: data.email,
         password: data.password,
       })
-      .then(function (response) {
-        console.log(response);
+      .then(function () {
+        setRegistrationSuccessful(true);
+
+        setTimeout(() => {
+          closeModal();
+          setRegistrationSuccessful(false);
+        }, 2500);
+
+        reset();
       })
       .catch(function (error) {
         console.error(error);
@@ -56,46 +72,50 @@ export function Modal({ isOpen, closeModal }: ModalProps) {
     isOpen && (
       <ModalOverlay>
         <div className="modal">
-          <form onSubmit={handleSubmit(handleRegister)}>
-            <h2>Cadastre-se!!</h2>
-            <ContainerInput>
-              <label>Cadastre seu email:</label>
-              <input
+          {isRegistrationSuccessful ? (
+            <>
+              <img src={sucess} alt="" />
+              <p className="sucessText">Cadastro feito com sucesso!</p>
+            </>
+          ) : (
+            <form onSubmit={handleSubmit(handleRegister)}>
+              <h2>Cadastre-se!!</h2>
+              <Input
                 type="email"
+                name="email"
                 placeholder="aaaa@gmail.com"
-                {...register("email")}
+                register={register}
+                label="Cadastre seu e-mail:"
               />
               {errors.email && (
                 <p className="textError">{errors.email.message}</p>
               )}
-            </ContainerInput>
-            <ContainerInput>
-              <label>Digite sua senha:</label>
-              <input
+              <Input
                 type="password"
-                placeholder="1234"
-                {...register("password")}
+                name="password"
+                placeholder="Digite sua senha"
+                register={register}
+                label="Digite sua senha:"
               />
               {errors.password && (
                 <p className="textError">{errors.password.message}</p>
               )}
-            </ContainerInput>
-            <ContainerInput>
-              <label>Confirme sua senha:</label>
-              <input
+              <Input
                 type="password"
+                name="confirmPassword"
                 placeholder="1234"
-                {...register("confirmPassword")}
+                register={register}
+                label="Confirme sua senha:"
               />
               {errors.confirmPassword && (
                 <p className="textError">{errors.confirmPassword.message}</p>
               )}
-            </ContainerInput>
-            <button className="btn-close" onClick={closeModal}>
-              Fechar
-            </button>
-            <button className="btn-register">Cadastrar</button>
-          </form>
+              <button className="btn-close" onClick={closeModal}>
+                Fechar
+              </button>
+              <button className="btn-register">Cadastrar</button>
+            </form>
+          )}
         </div>
       </ModalOverlay>
     )

@@ -40,6 +40,10 @@ export const ModalOverlay = styled.div`
     /* align-items: center; */
     flex-direction: column;
     width: 375px;
+
+    .sucessText {
+      text-align: center;
+    }
   }
 
   .modal button {

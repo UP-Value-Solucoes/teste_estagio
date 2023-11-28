@@ -7,14 +7,10 @@ import { z } from "zod";
 import { api } from "../../services";
 import { useNavigate } from "react-router-dom";
 
-import {
-  ContainerForm,
-  ContainerInput,
-  FooterContainer,
-  Main,
-  SubmitButton,
-} from "./styles";
 import { Modal } from "../../components/Modal";
+import { Input } from "../../components/Input";
+
+import { ContainerForm, FooterContainer, Main, SubmitButton } from "./styles";
 
 interface Users {
   email: string;
@@ -24,13 +20,14 @@ interface Users {
 const loginValidationSchema = z.object({
   email: z
     .string()
-    .email()
+    .email("Digite o e-mail corretamente!")
     .min(5, "Seu email deve ter pelo menos 5 caracteres"),
   password: z.string().min(5, "Senha deve ter pelo menos 5 caracteres"),
 });
 
 export function Home() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [messageInvalid, setMessageInvalid] = useState(false);
 
   const {
     register,
@@ -49,9 +46,9 @@ export function Home() {
 
         .then((response) => {
           if (response.data.length === 0) {
-            console.log("não tem!");
+            setMessageInvalid(true);
           } else {
-            console.log("achou");
+            navigate("/Sucess");
           }
         });
     } catch (error) {
@@ -71,30 +68,29 @@ export function Home() {
     <Main>
       <ContainerForm>
         <h1>Login</h1>
+        {messageInvalid && (
+          <p className="acessError">Suas Credenciais estão erradas!!!</p>
+        )}
         <form onSubmit={handleSubmit(handleLogin)}>
-          <ContainerInput>
-            <label>Seu e-mail</label>
-            <input
-              type="email"
-              placeholder="contato@gmail.com"
-              {...register("email")}
-            />
-            {errors.email && (
-              <p className="textError">{errors.email.message}</p>
-            )}
-          </ContainerInput>
-          <ContainerInput>
-            <label>Sua senha</label>
-            <input
-              type="password"
-              placeholder="123"
-              {...register("password")}
-            />
-            {errors.password && (
-              <p className="textError">{errors.password.message}</p>
-            )}
-            <SubmitButton>Logar</SubmitButton>
-          </ContainerInput>
+          <Input
+            type="email"
+            name="email"
+            placeholder="contato@gmail.com"
+            register={register}
+            label="Seu e-mail"
+          />
+          {errors.email && <p className="textError">{errors.email.message}</p>}
+          <Input
+            type="password"
+            name="password"
+            placeholder="123"
+            register={register}
+            label="Sua senha"
+          />
+          {errors.password && (
+            <p className="textError">{errors.password.message}</p>
+          )}
+          <SubmitButton>Logar</SubmitButton>
         </form>
         <FooterContainer>
           <p>Ainda não tem uma conta?</p>
