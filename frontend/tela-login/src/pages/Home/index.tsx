@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
-import { api } from "../../src/services";
+import { api } from "../../services";
+import { useNavigate } from "react-router-dom";
 
 import {
   ContainerForm,
@@ -13,6 +14,7 @@ import {
   Main,
   SubmitButton,
 } from "./styles";
+import { Modal } from "../../components/Modal";
 
 interface Users {
   email: string;
@@ -20,12 +22,16 @@ interface Users {
 }
 
 const loginValidationSchema = z.object({
-  email: z.string().min(5, "Seu email deve ter pelo menos 5 caracteres"),
+  email: z
+    .string()
+    .email()
+    .min(5, "Seu email deve ter pelo menos 5 caracteres"),
   password: z.string().min(5, "Senha deve ter pelo menos 5 caracteres"),
 });
 
 export function Home() {
-  const [user, setUser] = useState<Users[]>([]);
+  const [modalOpen, setModalOpen] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -34,30 +40,32 @@ export function Home() {
     resolver: zodResolver(loginValidationSchema),
   });
 
+  const navigate = useNavigate();
+
   const handleLogin: SubmitHandler<Users> = async (data) => {
     try {
-      const userAuthenticated = user.find(
-        (user) => user.email === data.email && user.password === data.password
-      );
+      api
+        .get(`/users?email=${data.email}&password=${data.password}`)
 
-      if (userAuthenticated) {
-        console.log("Login bem-sucedido!", data);
-      } else {
-        console.error("Credenciais incorretas");
-      }
+        .then((response) => {
+          if (response.data.length === 0) {
+            console.log("não tem!");
+          } else {
+            console.log("achou");
+          }
+        });
     } catch (error) {
       console.error("Erro ao realizar login ou chamada à API:", error);
     }
   };
 
-  useEffect(() => {
-    api
-      .get("/users")
-      .then((response) => {
-        setUser(response.data);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
   return (
     <Main>
@@ -67,11 +75,13 @@ export function Home() {
           <ContainerInput>
             <label>Seu e-mail</label>
             <input
-              type="text"
+              type="email"
               placeholder="contato@gmail.com"
               {...register("email")}
             />
-            {errors.email && <p>{errors.email.message}</p>}
+            {errors.email && (
+              <p className="textError">{errors.email.message}</p>
+            )}
           </ContainerInput>
           <ContainerInput>
             <label>Sua senha</label>
@@ -80,14 +90,19 @@ export function Home() {
               placeholder="123"
               {...register("password")}
             />
+            {errors.password && (
+              <p className="textError">{errors.password.message}</p>
+            )}
             <SubmitButton>Logar</SubmitButton>
           </ContainerInput>
-
-          <FooterContainer>
-            <p>Ainda não tem uma conta?</p>
-            <button>Cadastre-se</button>
-          </FooterContainer>
         </form>
+        <FooterContainer>
+          <p>Ainda não tem uma conta?</p>
+          <button onClick={openModal} className="buttonRegister">
+            Cadastre-se
+          </button>
+        </FooterContainer>
+        <Modal isOpen={modalOpen} closeModal={closeModal} />
       </ContainerForm>
     </Main>
   );

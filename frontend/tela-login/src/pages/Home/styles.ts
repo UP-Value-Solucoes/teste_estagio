@@ -13,8 +13,12 @@ export const ContainerForm = styled.div`
   flex-direction: column;
   padding: 20px;
   width: 430px;
-  background: ${(props) => props.theme["blue-gray-200"]};
+  background: ${(props) => props.theme["white-100"]};
   border: 1px solid rgba(147, 184, 189, 0.8);
+  border-radius: 6px;
+  -webkit-box-shadow: 10px 10px 5px -3px rgba(0, 0, 0, 0.58);
+  -moz-box-shadow: 10px 10px 5px -3px rgba(0, 0, 0, 0.58);
+  box-shadow: 10px 10px 5px -3px rgba(0, 0, 0, 0.58);
 
   @media screen and (max-width: 453px) {
     margin: 10px;
@@ -42,6 +46,14 @@ export const ContainerForm = styled.div`
       transparent 100%
     );
   }
+
+  .buttonRegister {
+    border: none;
+    background: none;
+    margin-left: 12px;
+    color: ${(props) => props.theme["green-800"]};
+    cursor: pointer;
+  }
 `;
 
 export const ContainerInput = styled.div`
@@ -52,6 +64,7 @@ export const ContainerInput = styled.div`
   label {
     color: ${(props) => props.theme["green-800"]};
     margin-bottom: 4px;
+    font-weight: 400;
   }
 
   input {
@@ -62,6 +75,10 @@ export const ContainerInput = styled.div`
   input::placeholder {
     color: #bebcbc;
     font-style: italic;
+  }
+  .textError {
+    margin-top: 4px;
+    color: ${(props) => props.theme["red"]};
   }
 `;
 
