@@ -75,7 +75,9 @@ export function Home() {
         {messageInvalid && (
           <p className="acessError">Suas Credenciais estão erradas!!!</p>
         )}
-        {loginSuccess && <p className="loginSuccess">Login bem-sucedido!</p>}
+        {loginSuccess && (
+          <p className="loginSuccess">Login bem-sucedido! Redirecionando...</p>
+        )}
         <form onSubmit={handleSubmit(handleLogin)}>
           <Input
             type="email"
