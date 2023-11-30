@@ -1,0 +1,50 @@
+.title{
+    font-family: var(--font-primary);
+
+    &.titleForm {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: black;
+    }
+    &.textLabel{
+        font-size: .7614rem;
+        font-weight: 400;
+        color: black;
+    }
+    &.textButton{
+        font-size: 1rem;
+        font-weight: 500;
+        color: #FFF;
+    }
+    &.textSpan{
+        font-size: .75rem;
+        font-weight: 600;
+        color: var(--color-grey1);
+    }
+    &.textModal{
+        font-size: .875rem;
+        font-weight: 700;
+        color: var(--color-grey0);
+    }
+    &.labelModal{
+        font-size: .75rem;
+        font-weight: 400;
+        color: var(--color-grey0);
+    }
+    &.textTech{
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--color-grey0);
+
+    }
+    &.textTechList{
+        font-size: .8881rem;
+        font-weight: 700;
+        color: #FFF;
+    }
+    &.textModule{
+        font-size: .7614rem;
+        color: var(--color-grey1);
+        font-weight: 400;
+    }
+}

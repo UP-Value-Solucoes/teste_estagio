@@ -1,0 +1,58 @@
+%buttonDefaults {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    font-family: var(--font-primary);
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 4px;
+  }
+  .btn {
+    @extend %buttonDefaults;
+    padding: 0px 22.334px;
+    height: 3rem;
+    border: 1.218px solid;
+    &.join {
+      background: #82498C;
+      border-color: #82498C;
+  
+      &:hover{
+          filter: brightness(1.2);
+      }
+    }
+    &.cadaster{
+      background: #82498C;
+      border-color: #82498C;
+  
+      &:hover{
+          background: var(--color-primary);
+      }
+    }
+    &.link {
+      background: var(--color-grey1);
+      border-color: var(--color-grey1);
+      &:hover{
+          filter: brightness(1.1);
+      }
+    }
+  }
+  .btnLeft {
+    height: 40.11px;
+    padding: 0px 1.0152rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .75rem;
+    font-weight: 600;
+    font-family: var(--font-primary);
+    color: var(--color-grey0);
+    background: var(--color-grey3);
+    border-radius: 4px;
+  
+    &:hover{
+      filter: brightness(1.3);
+    }
+  }
