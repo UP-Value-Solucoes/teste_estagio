@@ -1,10 +1,10 @@
 @import "./grid.scss";
 @import "./reset.scss";
 @import "./global.scss";
-@import "./typografy.scss";
+@import "./typography.scss";
 @import "./button.scss";
 
 body {
-    background-color: #4A2A50;
+    background-color: var(--color-primary);;
   }
 

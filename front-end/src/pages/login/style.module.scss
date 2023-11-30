@@ -1,0 +1,16 @@
+main {
+    display: flex;
+    align-items: center;
+}
+.flexBox{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+    @media (min-width: 900px) {
+        flex-direction: row;
+        gap: 60px;
+    } 
+  
+}

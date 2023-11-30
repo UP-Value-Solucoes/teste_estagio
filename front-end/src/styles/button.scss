@@ -16,16 +16,16 @@
     height: 3rem;
     border: 1.218px solid;
     &.join {
-      background: #82498C;
-      border-color: #82498C;
+      background: var(--color-secondary);
+      border-color: var(--color-secondary);
   
       &:hover{
           filter: brightness(1.2);
       }
     }
     &.cadaster{
-      background: #82498C;
-      border-color: #82498C;
+      background: var(--color-secondary);
+      border-color: var(--color-secondary);
   
       &:hover{
           background: var(--color-primary);
