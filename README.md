@@ -4,7 +4,7 @@ A página de login e cadastro é parte integrante de uma plataforma de uma empre
 
 ## Componente Login
 
-![Tela de Login](../teste_estagio/frontend/src/images/LoginImagem.png)
+![Tela de Login](..//frontend/src/images/LoginImagem.png)
 
 - Responsável por gerenciar a interface de usuário para a autenticação. Ele inclui:
     - Campos de Entrada: Para inserção do e-mail e senha do usuário.
@@ -27,7 +27,7 @@ A página de login e cadastro é parte integrante de uma plataforma de uma empre
 
 
 ## Componente cadastro
-![Tela de Cadastro](../../frontend/src/images/CadastroImage.png)
+![Tela de Cadastro](../frontend/src/images/CadastroImage.png)
 
 - É uma parte essencial da plataforma "UpValue". Essa página permite que novos usuários se cadastrem na plataforma, fornecendo informações pessoais como nome, sobrenome, e-mail e senha.
 - O componente Cadastro gerencia a interface de usuário para o processo de cadastro. Incluindo:
