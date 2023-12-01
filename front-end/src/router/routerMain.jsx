@@ -5,7 +5,7 @@ import { RegisterPage } from "../pages/register/cadastro";
 export function RouterMain(){
     return(
       <Routes>
-        <Route path="/login" element={<LoginPage />}/>
+        <Route path="/" element={<LoginPage />}/>
         <Route path="/register" element={<RegisterPage />}/>
       </Routes>
     )

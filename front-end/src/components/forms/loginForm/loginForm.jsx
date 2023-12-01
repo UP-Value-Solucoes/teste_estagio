@@ -16,7 +16,7 @@ export const LoginForm = () => {
     console.log(formData);
   };
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit(submit)}>
       <div>
         <h1 className="title one">Acesse o sistema</h1>
         <div>
@@ -41,7 +41,7 @@ export const LoginForm = () => {
         // disabled={loading}
       />
       <div>
-        <button className="btn join">Entrar</button>
+        <button type="submit" className="btn join">Entrar</button>
       </div>
       <div className={styles.footer}>
         <span>Ou</span>

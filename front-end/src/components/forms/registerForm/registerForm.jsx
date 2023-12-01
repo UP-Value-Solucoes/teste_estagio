@@ -3,6 +3,7 @@ import { Input } from "../../input/input";
 import { registerFormSchema } from "../../../pages/register/formSchemaRegister";
 import { zodResolver } from "@hookform/resolvers/zod";
 import styles from "./style.module.scss";
+import { api } from "../../../services/api";
 
 export const RegisterForm = () => {
   const {
@@ -12,8 +13,12 @@ export const RegisterForm = () => {
   } = useForm({
     resolver: zodResolver(registerFormSchema),
   });
-  const submit = (formData) => {
-    console.log(formData);
+  const submit = async (formData) => {
+    try {
+      await api.post("/users", formData);
+    } catch (error) {
+        console.log(error)
+    }
   };
   return (
     <form onSubmit={handleSubmit(submit)} className={styles.form}>
