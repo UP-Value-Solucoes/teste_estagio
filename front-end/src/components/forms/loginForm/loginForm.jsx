@@ -12,6 +12,9 @@ export const LoginForm = () => {
   } = useForm({
     resolver: zodResolver(LoginFormSchema),
   });
+  const submit = (formData) => {
+    console.log(formData);
+  };
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <div>
