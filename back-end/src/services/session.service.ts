@@ -25,7 +25,7 @@ export const loginService = async (data: SessionCreate): Promise<{token: string}
     
     const token: string = sign(
         { email: user.email }, 
-        process.env.SECRET_KEY!, 
+        process.env.JWT_SECRET!, 
         { expiresIn: process.env.JWT_EXPIRES_IN!, subject: user.id.toString() }
       )
       return {token}
