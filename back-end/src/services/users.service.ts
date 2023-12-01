@@ -1,9 +1,12 @@
 import format from "pg-format";
 import { client } from "../database";
-import { CreateUser, User, UserResult } from "../interfaces/users.interface";
+import { User, UserResult, userCreate } from "../interfaces/users.interface";
+import { hash } from "bcryptjs";
 
 
-export const createUserService = async (data: CreateUser): Promise<User> => {
+export const createUserService = async (data: userCreate): Promise<User> => {
+  data.password = await hash(data.password,10)
+  console.log(data.password)
   const queryFormat: string = format(
     `INSERT INTO "users" (%I) VALUES (%L) RETURNING *`,
     Object.keys(data),

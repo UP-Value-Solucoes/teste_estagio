@@ -1,11 +1,8 @@
 import { QueryResult } from "pg"
+import { z } from 'zod'
+import { userCreateSchema, userSchema } from "../schemas/user.schema"
 
-export type User = {
-    id: number,
-	name: string,
-	email: string
-}
+export type User = z.infer<typeof userSchema> 
 
-export type CreateUser = Omit<User, "id">
-
+export type userCreate = z.infer<typeof userCreateSchema>  
 export type UserResult = QueryResult<User>
