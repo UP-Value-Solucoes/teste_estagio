@@ -4,4 +4,4 @@ import { verifyEmail } from "../middlewares/verifyEmail.middleware";
 
 export const userRoutes: Router = Router()
 
-userRoutes.post('/',verifyEmail, createUserController )
+userRoutes.post('',verifyEmail, createUserController )
