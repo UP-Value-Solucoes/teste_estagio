@@ -20,7 +20,7 @@ export const LoginForm = () => {
     
     try {
       const token = await api.post("/login", formData);
-      toast.success('Login feito com sucesso')
+      toast.success('Login Sucess')
       
       navigate("/register")
     } catch (error) {
