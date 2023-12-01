@@ -4,8 +4,10 @@ import { registerFormSchema } from "../../../pages/register/formSchemaRegister";
 import { zodResolver } from "@hookform/resolvers/zod";
 import styles from "./style.module.scss";
 import { api } from "../../../services/api";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export const RegisterForm = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -13,9 +15,10 @@ export const RegisterForm = () => {
   } = useForm({
     resolver: zodResolver(registerFormSchema),
   });
-  const submit = async (formData) => {
+  const submit = async (formData) => { 
     try {
       await api.post("/users", formData);
+      navigate("/")
     } catch (error) {
         console.log(error)
     }

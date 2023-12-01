@@ -4,8 +4,11 @@ import { LoginFormSchema } from "./formSchemaLogin";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../../input/input"
 import { api } from "../../../services/api";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const LoginForm = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -14,11 +17,15 @@ export const LoginForm = () => {
     resolver: zodResolver(LoginFormSchema),
   });
   const submit = async (formData) => {
+    
     try {
       const token = await api.post("/login", formData);
-      console.log(token)
+      toast.success('Login feito com sucesso')
+      
+      navigate("/register")
     } catch (error) {
         console.log(error)
+        toast.error(error.response.data.message)
     }
   };
   return (
@@ -36,7 +43,6 @@ export const LoginForm = () => {
         {...register("email")}
         placeholder="Digite seu email"
         error={errors.email}
-        // disabled={loading}
       />
       <Input
         label="Senha"
@@ -44,14 +50,18 @@ export const LoginForm = () => {
         {...register("password")}
         error={errors.password}
         placeholder="Digite sua senha"
-        // disabled={loading}
+        
       />
       <div>
         <button type="submit" className="btn join">Entrar</button>
+        
       </div>
       <div className={styles.footer}>
         <span>Ou</span>
-        <p>Cadastre -se</p>
+        
+        <Link className={styles.teste} to={"/register"}>
+          cadastra -se
+        </Link>
       </div>
     </form>
   );

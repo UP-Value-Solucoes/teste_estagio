@@ -18,15 +18,11 @@
 
   @media (min-width:320px) {
     label{
-      margin-left: 20px;
+      font-family: var(--font-primary);
     }
     input{
-      width: 90%;
-      margin-left: 20px;
-    }
-    select{
-      width: 90%;
-      margin-left: 20px;
+      width: 100%;
+    
     }
   }
    
