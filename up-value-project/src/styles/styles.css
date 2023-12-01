@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c3dbe3;
+
+}
+
+.form{
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 6vw;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    color: #070707;
+    width: 100vw;
+    height: 100vh;
+}
+
+.form h1{
+    margin-bottom: 50px;
+    font-weight: 900;
+    color: #001eff;
+}
+
+.form-input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-input label{
+    position: absolute;
+    font-size: 5vw;
+    font-weight: 700;
+    color: #777da7;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-input input{
+    font-size: 5vw;
+    border: none;
+    height: 1px;
+    background-color: transparent;
+    border-bottom: 2px solid #777da7;
+    padding: 12px 5px;
+    color: #777da7;
+    transition: all 0.4s ease-in-out;
+    border-radius: 3px;
+    outline: none;
+}
+
+.form-input input:focus ~ label, .form-input input:valid ~ label{
+    transform: translateY(-18px);
+    font-size: 4vw;
+    color: #001eff;
+}
+
+.form-input input:focus, .form-input input:valid{
+    border: 2px solid #001eff;
+    height: 40px; 
+}
+
+.links{
+    margin-top: 3px;
+    display: flex;
+    flex-direction: row;
+    font-size: 3.8vw;
+    font-weight: 700;
+    justify-content: space-between;
+}
+
+.links a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.button-sign-in{
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+    font-size: 6vw;
+    font-weight: 700;
+    color: #f6f6f6;
+    background-color: #001eff;
+}
+
+.errors{
+    font-size: 4.2vw;
+}
+
+.errors span{
+    position: relative;
+    color: #ff0000;
+    display: none;
+}
+
+.form hr{
+    height: 1px;
+    background-color: #000000;
+    width: 100%;
+}
+
+.social-media-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+}
+
+.social-media-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.social-media-buttons img{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px 0 0 5px;
+    padding: 10px;
+}
+
+.social-media-buttons:nth-child(1) img{
+    background-color: #072cff;
+}
+
+.social-media-buttons:nth-child(2) img{
+    background-color: #ff0707;
+}
+
+.social-media-buttons p{
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-weight: 900;
+    color: #ffffff;
+    border-radius: 0 5px 5px 0;
+}
+
+.social-media-buttons:nth-child(1) p{
+    background-color: #556eff;
+}
+
+.social-media-buttons:nth-child(2) p{
+    background-color: #ff5555;
+}
+
+
+@media screen and (min-width: 426px) {
+    .form{
+        width: 450px;
+        height: 500px;
+        gap: 20px;
+        padding: 60px 0 70px 0; 
+        box-shadow: 5px 5px 25px #00000054;
+        border-radius: 20px;
+    }
+
+    .form h1{
+        margin-bottom: 20px;
+    }
+    
+    .form-input{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .form-input label{
+        font-size: 15px;
+        transform: translateX(-150px);
+    }
+    
+    .form-input input{
+        width: 78%;
+        font-size: 15px;
+        padding: 12px 5px;
+    }
+    
+    .form-input input:focus ~ label, .form-input input:valid ~ label{
+        transform: translate(-155px, -18px);
+        font-size: 14px;
+    }
+    
+    .links{
+        width: 78%;
+        font-size: 13px;
+    }
+    
+    .button-sign-in{
+        width: 78%;
+        min-height: 45px;
+        border-radius: 3px;
+        font-size: 20px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s;
+        background-color: #556eff;
+    }
+
+    .button-sign-in:hover{
+        background-color: #001eff;
+    }
+
+    .errors span{
+        font-size: 13px;
+        color: #ff0000;
+        display: none;
+    }
+
+    .form hr{
+        width: 78%;
+    }
+    
+    .social-media-section{
+        width: 78%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    .social-media-buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        cursor: pointer;
+    }
+    
+    .social-media-buttons img{
+        width: 40px;
+        height: 40px;
+        border-radius: 5px 0 0 5px;
+        padding: 10px;
+    }
+
+    .social-media-buttons p{
+        height: 40px;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-weight: 900;
+        color: #ffffff;
+        border-radius: 0 5px 5px 0;
+    }
+    
+    #facebook img{
+        background-color: #0019a5;
+    }
+    
+    #google img{
+        background-color: #d60000;
+    }
+
+    #facebook p{
+        background-color: #556eff;
+    }
+    
+    #google p{
+        background-color: #ff5555;
+    }
+
+    
+    #facebook img:hover ~ p, #facebook p:hover{
+        background-color: #072cff;
+        transition: all 0.4s;
+    }
+
+    #google img:hover ~ p, #google p:hover{
+        background-color: #ff0707;
+        transition: all 0.4s;
+    }
+
+}
