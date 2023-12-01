@@ -4,9 +4,9 @@ import { routes } from './routes/index.router'
 import { handleErrors } from './middlewares/handleError.middleware'
 import cors from "cors" 
 export const app: Application = express()
-app.use(express.json())
-
 app.use(cors())
+
+app.use(express.json())
 
 app.use('/', routes)
 
