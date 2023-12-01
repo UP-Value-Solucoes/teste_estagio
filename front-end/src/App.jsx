@@ -1,18 +1,13 @@
-import { LoginPage } from "./pages/login/login"
-import { RegisterPage } from "./pages/register/register";
+import { RouterMain } from "./router/routerMain";
 import "./styles/index.scss";
 
-function App() {
 
+function App() {
   return (
     <>
-      <div className='App'>
-       {/* <LoginPage /> */}
-       <RegisterPage />
-       
-      </div>
+      <RouterMain />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
