@@ -1,0 +1,21 @@
+[debug] [2023-11-29T00:49:28.860Z] ----------------------------------------------------------------------
+[debug] [2023-11-29T00:49:28.865Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Isabele\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-11-29T00:49:28.865Z] CLI Version:   12.9.1
+[debug] [2023-11-29T00:49:28.866Z] Platform:      win32
+[debug] [2023-11-29T00:49:28.866Z] Node Version:  v18.13.0
+[debug] [2023-11-29T00:49:28.876Z] Time:          Tue Nov 28 2023 21:49:28 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2023-11-29T00:49:28.876Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-29T00:49:28.891Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-29T00:49:28.893Z] > authorizing via signed-in user (beleoliveirals4@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Isabele\Desktop\UPVALUE\paginadelogin
+

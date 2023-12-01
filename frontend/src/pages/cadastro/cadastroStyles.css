@@ -1,0 +1,195 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+/* Reset CSS */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+/* Main Container */
+.main-cadastro {
+    width: 100vw;
+    min-height: 100vh;
+    background: -webkit-linear-gradient(left, black, blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Left and Right Containers */
+.left-cadastro,
+.right-cadastro {
+    width: 50vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Animation Keyframes */
+@keyframes writing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    100% {
+        border-color: #7045f0;
+    }
+}
+
+/* Left Container Styles */
+.left-cadastro > h1 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #7045f0;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    animation: writing 1.5s steps(150) forwards;
+}
+
+.left-cadastro > h1::after {
+    display: inline-block;
+    animation: blink-caret 1s step-end infinite;
+}
+
+.left-cadastro-image {
+    width: 50vw;
+    max-width: 400px;
+}
+
+/* Right Container Styles */
+.right-cadastro {
+    width: 50vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card Styles */
+.card-cadastro {
+    width: 60%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: #e9e9e9;
+    border-radius: 20px;
+    box-shadow: 5px 10px 20px 20px #a6a5a556;
+}
+
+.card-cadastro > h1 {
+    color: rgb(59, 94, 177);
+    margin: 0;
+    font-size: 20pt;
+    font-family: sans-serif;
+}
+
+
+/* Textfield Styles */
+.textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.textfield > input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #e3d8d8;
+    color: #000000de;
+    font-size: 12pt;
+    border: solid 0.5px #dfdfdf;
+    outline-color: #171d58;
+    box-sizing: border-box;
+}
+
+.textfield > label {
+    color: rgba(3, 3, 4, 0.871);
+    margin-bottom: 10px;
+}
+
+.textfield > input::placeholder {
+    color: #31333394;
+}
+
+/* Button Styles */
+.btn-cadastro {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #ffffff;
+    background: #6659b0;
+    cursor: pointer;
+}
+
+.btn-cadastro:hover {
+    background-color: rgb(59, 94, 177);
+}
+
+/* Below the Button Styles */
+.below-the-button {
+    font-size: 8px;
+    color: #636363;
+    text-align: center;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 950px) {
+    .card-cadastro {
+        width: 80%;
+        box-shadow: 0px 5px 5px 5px #a6a5a556;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .main-cadastro {
+        flex-direction: column;
+    }
+
+    .left-cadastro > h1 {
+        display: none;
+    }
+
+    .left-cadastro,
+    .right-cadastro {
+        width: 100%;
+        height: auto;
+    }
+
+    .left-cadastro-image {
+        width: 60vw;
+        max-width: 100%;
+        padding: 10px;
+    }
+}
