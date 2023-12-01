@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "npx tsc",
+    "start": "node app/server.js",
     "dev": "tsnd --cls --rs --ignore-watch node_modules src/server.ts"
   },
   "keywords": [],
