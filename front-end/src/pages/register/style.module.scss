@@ -1,0 +1,33 @@
+.flexBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625rem;
+    margin-top: 50px;
+  
+    img{
+      height: 1.3257rem;
+    }
+  
+    & > div:first-child{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+  @media (min-width:320px) {
+    label{
+      font-family: var(--font-primary);
+    }
+    input{
+      width: 100%;
+    
+    }
+  }
+   
+    button{
+      width: 90%;
+      margin-left: 20px;
+    }
+  }
