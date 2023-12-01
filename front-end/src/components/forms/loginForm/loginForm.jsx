@@ -3,6 +3,7 @@ import styles from "./style.module.scss"
 import { LoginFormSchema } from "./formSchemaLogin";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../../input/input"
+import { api } from "../../../services/api";
 
 export const LoginForm = () => {
   const {
@@ -12,8 +13,13 @@ export const LoginForm = () => {
   } = useForm({
     resolver: zodResolver(LoginFormSchema),
   });
-  const submit = (formData) => {
-    console.log(formData);
+  const submit = async (formData) => {
+    try {
+      const token = await api.post("/login", formData);
+      console.log(token)
+    } catch (error) {
+        console.log(error)
+    }
   };
   return (
     <form className={styles.form} onSubmit={handleSubmit(submit)}>
