@@ -148,6 +148,14 @@ json
 4. Resposta de Erro:
 `Código de status: 500 (Erro interno do servidor)`
 
+## Tecnologias utilizadas
+
+- HTML
+- CSS
+- JavaScript
+- React
+- Node
+
 
 ## Authors
 
